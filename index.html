@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/main.css" />
+    <title>Quiz web app</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="quiz-box" id="quiz-box">
+            <div class="question-side">
+                <h3 class="question"></h3>
+            </div>
+            <div class="answers-side"></div>
+
+            <button class="next-btn" id="next-question">Next</button>
+            <div class="quiz-indicator" id="quiz-indicator"></div>
+            <div class="loader" id="loader"></div>
+        </div>
+    </div>
+    <div class="main-menu">
+        <h2 class="menu-title">👾 select categoy 👾</h2>
+        <div class="menu-choose-side">
+            <select id="category-selector" class="category_selector">
+                <option value="sports">sports</option>
+                <option value="video games">video games</option>
+                <option value="animals">animals</option>
+                <option value="film">film</option>
+                <option value="computers">computers</option>
+                <option value="vehicles">vehicles</option>
+            </select>
+            <button class="choose-button" id="choose-button" type="submit">choose</button>
+        </div>
+    </div>
+
+    <script src="./main.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
+</body>
+
+</html>

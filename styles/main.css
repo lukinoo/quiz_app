@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: #9875c4;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .quiz-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 600px;
+  max-width: 100%;
+  height: 60vh;
+  background-color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 7px;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  z-index: 2;
+}
+
+.container .quiz-box .loader {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  border: 5px solid #f3f3f3;
+  border-top: 6px solid #9875c4;
+  border-radius: 100%;
+  visibility: hidden;
+  -webkit-animation: spin 1s infinite linear;
+          animation: spin 1s infinite linear;
+  z-index: 999;
+}
+
+.container .quiz-box .answers-side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container .quiz-box .answers-side .answer-buttons {
+  padding: 6px 20px;
+  border: none;
+  background: #eee;
+  font-size: 1rem;
+  margin: 0rem 0rem 0.5rem 0rem;
+  border-left: 5px solid #9875c4;
+  text-align: left;
+  color: #000;
+  cursor: pointer;
+}
+
+.container .quiz-box .quiz-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 5px;
+  border-radius: 10px;
+  -webkit-transition: width 0.75s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: width 0.75s cubic-bezier(0.165, 0.84, 0.44, 1);
+  background: #c845b0;
+  z-index: 5;
+}
+
+.container .quiz-box .next-btn {
+  position: absolute;
+  bottom: 3%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -3%);
+          transform: translate(-50%, -3%);
+  padding: 8px 28px;
+  border: none;
+  outline: none;
+  line-height: 1rem;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  background: #9875c4;
+  cursor: pointer;
+  -webkit-transition: 0.2s all ease-in-out;
+  transition: 0.2s all ease-in-out;
+  display: none;
+  z-index: 6;
+}
+
+.container .quiz-box .next-btn:hover {
+  background: rgba(152, 117, 196, 0.8);
+}
+
+.container .quiz-box .restart-game-btn {
+  padding: 0.7rem 1.6rem;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #000;
+  border-radius: 2rem;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1rem;
+  white-space: nowrap;
+  border: 2px solid #9875c4;
+  cursor: pointer;
+  -webkit-transition: 0.2s all ease-in-out;
+  transition: 0.2s all ease-in-out;
+}
+
+.container .quiz-box .restart-game-btn:hover {
+  background: rgba(152, 117, 196, 0.7);
+}
+
+.container .quiz-box .score-tag {
+  color: #ffa500;
+  font-weight: 900;
+  text-decoration: underline;
+}
+
+.main-menu {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background: #9875c4;
+  color: #fff;
+  z-index: 9;
+}
+
+.main-menu .menu-title {
+  font-size: 2rem;
+  padding: 0.8rem;
+  border-radius: 12px;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  background: #cf3cb4;
+}
+
+.main-menu select, .main-menu .choose-button {
+  border-radius: 2px;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  color: #fff;
+  border: none;
+  background: none;
+  border: 2px solid #fff;
+}
+
+.main-menu select:focus, .main-menu .choose-button:focus {
+  outline: none;
+}
+
+.main-menu select option {
+  color: #1b1a1b;
+  border: none;
+}
+
+.main-menu .choose-button {
+  margin-left: 1rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.main-menu .choose-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  background: #cf3cb4;
+  z-index: -1;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+.main-menu .choose-button:hover::before {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.correct {
+  background: #3cd46a !important;
+  color: #fff !important;
+}
+
+.incorrect {
+  background: #ff004c !important;
+  color: #fff !important;
+}
+
+.loader-active {
+  visibility: visible !important;
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/*# sourceMappingURL=main.css.map */
